@@ -15,8 +15,7 @@ const io = socketio(server)
 // socket connection and disconection
 io.on('connection', (socket) => {
     socket.on('join', ({name, room}, callback)=>{
-        const {error, user}  = addUser({id: socket.id, name, room})
-        console.log(name, room)
+        const {error, user}  = addUser({id: socket.id, name, room})        
 
         if (error) return {error}
 
